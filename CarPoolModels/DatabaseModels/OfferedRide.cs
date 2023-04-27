@@ -29,14 +29,14 @@ namespace CarPoolModels.Models
         public int Price { get; set; }
 
 
-        ////[ForeignKey("OfferedBy")]
-        //public Guid? OfferedBy { get; set; }
-        //public User Users { get; set; }
+        //[ForeignKey("OfferedBy")]
+        public Guid? OfferedBy { get; set; }
+        public User Users { get; set; }
 
-        [Display(Name = "User")]
-        public virtual Guid? OfferedBy { get; set; }
-        [ForeignKey("OfferedBy")]
-        public virtual User Users { get; set; }
+        //[Display(Name = "User")]
+        //public virtual Guid? OfferedBy { get; set; }
+        //[ForeignKey("OfferedBy")]
+        //public virtual User Users { get; set; }
 
 
     }

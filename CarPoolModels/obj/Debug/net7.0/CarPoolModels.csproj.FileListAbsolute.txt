@@ -12,3 +12,17 @@ E:\saurabh-GIT\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.pdb
 E:\saurabh-GIT\carpool\CarPoolModels\obj\Debug\net7.0\ref\CarPoolModels.dll
 E:\saurabh-GIT\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.runtimeconfig.json
 E:\saurabh-GIT\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.genruntimeconfig.cache
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.deps.json
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.runtimeconfig.json
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.dll
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.pdb
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.csproj.AssemblyReference.cache
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.AssemblyInfoInputs.cache
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.AssemblyInfo.cs
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.csproj.CoreCompileInputs.cache
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.dll
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\refint\CarPoolModels.dll
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.pdb
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.genruntimeconfig.cache
+E:\saurabh-GIT\Task 9 CarPool\carpool\CarPoolModels\obj\Debug\net7.0\ref\CarPoolModels.dll

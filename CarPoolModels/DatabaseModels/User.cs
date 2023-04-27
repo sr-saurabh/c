@@ -21,6 +21,6 @@ namespace CarPoolModels.Models
 
         public string UserName { get; set; }
         public string Image { get; set; }
-        //public ICollection<OfferedRide> OfferedRids { get; set; }
+        public ICollection<OfferedRide> OfferedRids { get; set; }
     }
 }

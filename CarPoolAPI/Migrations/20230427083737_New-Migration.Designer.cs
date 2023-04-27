@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarPoolAPI.Migrations
 {
     [DbContext(typeof(CarPoolDataDbContext))]
-    [Migration("20230427071626_New-Migration")]
+    [Migration("20230427083737_New-Migration")]
     partial class NewMigration
     {
         /// <inheritdoc />
@@ -106,9 +106,12 @@ namespace CarPoolAPI.Migrations
                     b.Property<int>("TotalSeats")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("UsersUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("OfferedRideId");
 
-                    b.HasIndex("OfferedBy");
+                    b.HasIndex("UsersUserId");
 
                     b.ToTable("OfferedRides");
                 });
@@ -163,8 +166,8 @@ namespace CarPoolAPI.Migrations
             modelBuilder.Entity("CarPoolModels.Models.OfferedRide", b =>
                 {
                     b.HasOne("CarPoolModels.Models.User", "Users")
-                        .WithMany()
-                        .HasForeignKey("OfferedBy");
+                        .WithMany("OfferedRids")
+                        .HasForeignKey("UsersUserId");
 
                     b.Navigation("Users");
                 });
@@ -178,6 +181,11 @@ namespace CarPoolAPI.Migrations
                         .IsRequired();
 
                     b.Navigation("OfferedRides");
+                });
+
+            modelBuilder.Entity("CarPoolModels.Models.User", b =>
+                {
+                    b.Navigation("OfferedRids");
                 });
 #pragma warning restore 612, 618
         }

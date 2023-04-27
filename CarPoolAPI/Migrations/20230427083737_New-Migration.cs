@@ -70,14 +70,15 @@ namespace CarPoolAPI.Migrations
                     AvailableSeats = table.Column<int>(type: "int", nullable: false),
                     Time = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    OfferedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    OfferedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UsersUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OfferedRides", x => x.OfferedRideId);
                     table.ForeignKey(
-                        name: "FK_OfferedRides_Users_OfferedBy",
-                        column: x => x.OfferedBy,
+                        name: "FK_OfferedRides_Users_UsersUserId",
+                        column: x => x.UsersUserId,
                         principalTable: "Users",
                         principalColumn: "UserId");
                 });
@@ -104,9 +105,9 @@ namespace CarPoolAPI.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OfferedRides_OfferedBy",
+                name: "IX_OfferedRides_UsersUserId",
                 table: "OfferedRides",
-                column: "OfferedBy");
+                column: "UsersUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Stoppages_OfferedRideId",
