@@ -4169,11 +4169,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\saurabh-GIT\\carpool\\CarPoolServices\\CarPoolServices.csproj",
+      "projectUniqueName": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolServices\\CarPoolServices.csproj",
       "projectName": "CarPoolServices",
-      "projectPath": "E:\\saurabh-GIT\\carpool\\CarPoolServices\\CarPoolServices.csproj",
+      "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolServices\\CarPoolServices.csproj",
       "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-      "outputPath": "E:\\saurabh-GIT\\carpool\\CarPoolServices\\obj\\",
+      "outputPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4190,11 +4190,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\saurabh-GIT\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
-              "projectPath": "E:\\saurabh-GIT\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
+            "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
+              "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
             },
-            "E:\\saurabh-GIT\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
-              "projectPath": "E:\\saurabh-GIT\\carpool\\CarPoolModels\\CarPoolModels.csproj"
+            "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
+              "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj"
             }
           }
         }

@@ -3467,11 +3467,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\saurabh-GIT\\carpool\\CarPoolModels\\CarPoolModels.csproj",
+      "projectUniqueName": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj",
       "projectName": "CarPoolModels",
-      "projectPath": "E:\\saurabh-GIT\\carpool\\CarPoolModels\\CarPoolModels.csproj",
+      "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj",
       "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-      "outputPath": "E:\\saurabh-GIT\\carpool\\CarPoolModels\\obj\\",
+      "outputPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
