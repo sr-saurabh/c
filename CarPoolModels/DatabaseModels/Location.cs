@@ -15,6 +15,7 @@ namespace CarPoolModels.Models
         [Key]
         public int LocationId { get; set; }
         public string LocationName { get; set; }
+        public ICollection<Stoppage> Stoppage { get; set; }
     }
 
 }

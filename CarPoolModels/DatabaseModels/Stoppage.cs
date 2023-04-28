@@ -15,21 +15,13 @@ namespace CarPoolModels.Models
         [Required]
         [Key] public int StoppageId { get; set; }
 
-        //[Display(Name = "Location")]
-        //public virtual int LocationId { get; set; }
+        public int StoppageNo { get; set; }
 
+        public int LocationId { get; set; }
+        public Location Locations { get; set; }
 
-        //[ForeignKey("LocationId")]
-        //public virtual Location Locations { get; set; }
-        public string Name { get; set; }
-        public int Position { get; set; }
-
-
-        [Display(Name = "OfferedRide")]
-        public virtual Guid OfferedRideId { get; set; }
-
-
-        [ForeignKey("OfferedRideId")]
-        public virtual OfferedRide OfferedRides { get; set; }
+        //[ForeignKey("OfferedRideId")]
+        public  Guid OfferedRideId { get; set; }
+        public OfferedRide OfferedRides { get; set; }
     }
 }

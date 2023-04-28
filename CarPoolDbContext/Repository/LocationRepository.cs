@@ -40,5 +40,13 @@ namespace CarPoolDbContext.Repository
                 return false;
             return true;
         }
+        public int GetLocationId(string location) 
+        {
+            var x = carPoolDbContext.Locations.Where(loc => loc.LocationName == location);
+            if(!x.Any()) 
+                return 0;
+
+            return x.First().LocationId;
+        }
     }
 }

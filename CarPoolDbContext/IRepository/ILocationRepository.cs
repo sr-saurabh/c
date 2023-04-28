@@ -13,5 +13,6 @@ namespace CarPoolDbContext.IRepository
         void AddLocation(List<Location> locations);
         int GetSize();
         bool HasLocation(string location);
+        int GetLocationId(string location);
     }
 }

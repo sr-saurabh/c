@@ -12,19 +12,31 @@ namespace CarPoolAPI.Controllers
     [Route("api/[controller]")]
     public class OfferRideController : Controller
     {
-        private readonly IOfferRideServices _offerRideServices;
+        private readonly IOfferRideServices offerRideServices;
+
         public OfferRideController(IOfferRideServices offerRideServices)
         {
-            _offerRideServices = offerRideServices;
+            this.offerRideServices = offerRideServices;
         }
 
         [HttpPost]
         public IActionResult AddOfferRide(OfferedRideWithLocations offeredRide)
         {
-            offeredRide.OfferedRides.OfferedBy = new Guid(User.FindFirst("Id").Value);
-            var x = _offerRideServices.AddOfferedRide(offeredRide);
+            offeredRide.OfferedRides.UserId = new Guid(User.FindFirst("Id").Value);
+            var x = offerRideServices.AddOfferedRide(offeredRide);
             return Ok(x);
+        }
 
+        [HttpGet]
+        [Route("get-offered-rides")]
+        public IActionResult GetOfferedRides()
+        {
+            Guid userId = new Guid(User.FindFirst("Id").Value);
+            var offeredRides=offerRideServices.GetOfferedRides(new Guid(User.FindFirst("Id").Value));
+            if(offeredRides==null)
+                return Ok("No offered ride is available!");
+
+            return Ok(offeredRides);
         }
     }
 

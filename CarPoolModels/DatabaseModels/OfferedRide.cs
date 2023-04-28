@@ -14,11 +14,10 @@ namespace CarPoolModels.Models
     {
         public Guid OfferedRideId { get; set; }
 
-        public string OfferingFrom { get; set; }
+        public string Source { get; set; }
+        public string Destination { get; set; }
 
-        public string OfferingTo { get; set; }
-
-        public DateTime OfferingDate { get; set; }
+        public DateTime Date { get; set; }
 
         public int TotalSeats { get; set; }
 
@@ -29,15 +28,14 @@ namespace CarPoolModels.Models
         public int Price { get; set; }
 
 
-        //[ForeignKey("OfferedBy")]
-        public Guid? OfferedBy { get; set; }
-        public User Users { get; set; }
+        //[Display(Name = "RideOfferedBy")]
+        [ForeignKey("UserId")]
+        public Guid? UserId { get; set; }
+        public User User { get; set; }
 
-        //[Display(Name = "User")]
-        //public virtual Guid? OfferedBy { get; set; }
-        //[ForeignKey("OfferedBy")]
-        //public virtual User Users { get; set; }
-
+        public ICollection<Stoppage> Stoppages{ get; set; }
+        public ICollection<BookedRide> BookedRids { get; set; }
+        //public User User { get; set; } 
 
     }
 }

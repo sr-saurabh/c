@@ -49,14 +49,12 @@ namespace CarPoolServices.Services
 
         public AuthResponse AuthenticateUser(string email, string password)
         {
-            //var users = carPoolDbContext.Users.Where(user => user.Email == email).ToList();
             var user = authenticationRepository.GetUserByEmail(email);
 
             if (user==null)
                 return new AuthResponse("", "", "Email not found, please signUp first.");
 
             user = authenticationRepository.ValidateUser(email,password);
-            //users = carPoolDbContext.Users.Where(user => user.Email == email && user.Password == password).ToList();
 
             if (user==null)
                 return new AuthResponse("", "", "Email or password incorrect.");

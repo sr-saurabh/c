@@ -23,6 +23,12 @@ namespace CarPoolServices.Services
         {
             return locationRepository.GetLocation();
         }
+
+        public int GetLocationId(string location) {
+
+            return locationRepository.GetLocationId(location);
+        }
+
         public void AddLocations(List<string> locations)
         {
             int size = locationRepository.GetSize();
@@ -34,10 +40,11 @@ namespace CarPoolServices.Services
             List<Location> loc = new();
             for(int i=0;i< locations.Count; i++)
             {
-                string TempLocation = locations[i].ToLower();
-                if (!locationRepository.HasLocation(TempLocation))
+
+                string tempLocation = locations[i].ToLower();
+                if (!locationRepository.HasLocation(tempLocation))
                 {
-                    Location location = new() {LocationName = TempLocation };
+                    Location location = new() {LocationName = tempLocation };
                     loc.Add(location);
                 }
             }
