@@ -11,5 +11,6 @@ namespace CarPoolServices.IContracts
     {
         void AddLocations(List<string> locations);
         List<Location> GetLocations();
+        int GetLocationId(string location);
     }
 }

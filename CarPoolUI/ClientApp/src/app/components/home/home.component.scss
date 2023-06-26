@@ -1,0 +1,41 @@
+section{
+    background: url(../../../assets/img3.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+    p{
+        float: left;
+        font-family: 'roboto';
+        font-size: 2.1rem;
+        font-weight: 900;
+    }
+    &>div{
+        padding: 0 30px;
+    }
+    .ride-nevigation 
+    {
+        p{
+        height: 13rem;
+        width: 17rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 2rem;
+        }
+    }
+    .book{
+
+        background-color: #9319FF;
+    }
+    .offer{
+        background-color: #FFAC19;
+    }
+}
+
+
+@media only screen and (max-width: 637px) {
+
+    section .ride-nevigation {
+   flex-direction: column;
+    }
+}

@@ -1,0 +1,120 @@
+<section>
+  <app-nav></app-nav>
+  <div class="d-flex gap-4 ride-container">
+    <div>
+      <p class="booked-headings">Booked Rides</p>
+      <p *ngIf="TempRideCards.length<=0">No ride found!</p>
+
+      <div *ngFor="let ride of TempRideCards">
+        <div class="mb-2 card ride-card">
+          <div class="d-flex align-items-center justify-content-between ride-card-header">
+            <p class="fw-bolder fs-2">
+              {{ ride.name | titlecase }}
+            </p>
+            <img src="{{ ride.image }}" alt="" />
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between location">
+            <div>
+              <span> from</span>
+              <p>{{ ride.from }}</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-circle start"></i>
+              <i class="fa-solid fa-circle fa-2xs"></i>
+              <i class="fa-solid fa-circle fa-2xs"></i>
+              <i class="fa-solid fa-circle fa-2xs"></i>
+              <i class="fa-solid fa-circle fa-2xs"></i>
+              <i class="fa-sharp fa-solid fa-location-dot start"></i>
+            </div>
+            <div>
+              <span> to</span>
+              <p>{{ ride.to }}</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <span>Date</span>
+              <p>{{ ride.date | date : "dd/MM/yyyy" }}</p>
+            </div>
+            <div>
+              <span>Time</span>
+              <p>{{ ride.time }}</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <span>Price</span>
+              <p>{{ ride.price }}</p>
+            </div>
+            <div>
+              <span>Seats</span>
+              <p>{{ ride.seats }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ms-3">
+        <p class="booked-headings">Offered Rides</p>
+        <p *ngIf="TempRideCards.length<=0">No ride found!</p>
+
+        <div *ngFor="let ride of TempRideCards">
+            <div class="mb-2 card ride-card">
+              <div class="d-flex align-items-center justify-content-between ride-card-header">
+                <p class="fw-bolder fs-2">
+                  {{ ride.name | titlecase }}
+                </p>
+                <img src="{{ ride.image }}" alt="" />
+              </div>
+    
+              <div class="d-flex align-items-center justify-content-between location">
+                <div>
+                  <span> from</span>
+                  <p>{{ ride.from }}</p>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-circle start"></i>
+                  <i class="fa-solid fa-circle fa-2xs"></i>
+                  <i class="fa-solid fa-circle fa-2xs"></i>
+                  <i class="fa-solid fa-circle fa-2xs"></i>
+                  <i class="fa-solid fa-circle fa-2xs"></i>
+                  <i class="fa-sharp fa-solid fa-location-dot start"></i>
+                </div>
+                <div>
+                  <span> to</span>
+                  <p>{{ ride.to }}</p>
+                </div>
+              </div>
+    
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <span>Date</span>
+                  <p>{{ ride.date | date : "dd/MM/yyyy" }}</p>
+                </div>
+                <div>
+                  <span>Time</span>
+                  <p>{{ ride.time }}</p>
+                </div>
+              </div>
+    
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <span>Price</span>
+                  <p>{{ ride.price }}</p>
+                </div>
+                <div>
+                  <span>Seats</span>
+                  <p>{{ ride.seats }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+</section>

@@ -1,6 +1,7 @@
 ﻿using CarPoolDbContext.CarpoolData;
 using CarPoolDbContext.IRepository;
 using CarPoolModels.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace CarPoolDbContext.Repository
         public User? ValidateUser(string email, string password)
         {
             return carPoolDbContext.Users.Where(user => user.Email == email && user.Password == password).SingleOrDefault();
+            //return carPoolDbContext.Users.Include(obj=> obj.OfferedRides).Where(user => user.Email == email && user.Password == password).SingleOrDefault();
         }
 
         public void AddUser(User user)

@@ -15,19 +15,23 @@ namespace CarPoolModels.Models
         [Required]
         [Key]
         public Guid BookingId { get; set; }
-        public string BookedFrom { get; set; }
-        public string BookedTo { get; set; }
-
-        public DateTime Date { get; set; }
+        public string Source { get; set; }
+        public string Destination { get; set; }
 
         public int BookedSeats { get; set; }
-        public int Time { get; set; }
-        public int Price { get; set; }
 
-        [ForeignKey("UserId")]
-        public Guid RideTakenBy { get; set; }
+        public Guid OfferedRideId { get; set; }
+        public OfferedRide OfferedRide { get; set; }
 
-        [ForeignKey("UserId")]
-        public  Guid RideOfferedBy { get; set; }
+        [ForeignKey("RideTakenBy")]
+        public Guid? UserId { get; set; }
+        public User User { get; set; }
+
+        //public OfferedRide OfferedRide { get; set; }
+        //public User User { get; set; }
+
+
+
+
     }
 }

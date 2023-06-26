@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarPoolModels.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,12 @@ namespace CarPoolModels.ApiModels
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
-        public string RideFrom { get; set; }
-        public string RideTo { get; set; }
-        public DateTime Date { get; set;}
+        public string Source { get; set; }
+        public string Destination { get; set; }
+        public DateOnly Date { get; set;}
         public int Price { get; set;}
         public int Seats { get; set;}
         public int Time { get; set;}
+
     }
 }

@@ -25,10 +25,14 @@ builder.Services.AddDbContext<CarPoolDataDbContext>(options =>options.UseSqlServ
 builder.Services.AddScoped<IAuthorizationServices, AuthorizationServices>();
 builder.Services.AddScoped<IOfferRideServices, OfferRideServices>();
 builder.Services.AddScoped<ILocationServices, LocationServices>();
+builder.Services.AddScoped<IBookRidesServices, BookRidesServices>();
+builder.Services.AddScoped<ICommonServices, CommonServices>();
 
 builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddScoped <IOfferRideRepository, OfferRideRepository> ();
 builder.Services.AddScoped <ILocationRepository, LocationRepository> ();
+builder.Services.AddScoped <IBookRidesRepository, BookRidesRepository> ();
+//builder.Services.AddScoped <IOfferRideRepository, OfferRideRepository> ();
 //builder.Services.AddTransient<IOfferRideServices, OfferRideServices>();
 
 var mapperConfig = new MapperConfiguration(mc =>

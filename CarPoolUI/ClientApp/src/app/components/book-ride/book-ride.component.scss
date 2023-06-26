@@ -1,0 +1,142 @@
+section{
+    background: url(../../../assets/img4.png);
+    // background-size: contain;
+    width: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;   
+    overflow-y: auto!important;
+    height: 100vh;
+    &>div{
+        margin: 20px 30px;
+    }
+}
+form{
+    height: 33rem;
+    width: 26rem;
+    // min-width: 26rem;
+    border-radius: 9px;
+    padding: 2rem;
+    box-shadow: 0px 2px 13px 1px rgb(218, 216, 216);
+    .toggle-ride{
+        height: 27px;;
+        width: 50px;
+        background-color: #9319FF;
+        border-radius: 3rem;
+        cursor:pointer;
+        .toggle-circle{
+            height: 1.3rem;
+            width: 1.3rem;
+            background-color:  #fff;
+            border-radius: 50%;
+        }
+    }
+    
+    .label-text{
+        color: #A1A1A1;
+    }
+    .input-container{
+        width:90%;
+        display: flex;
+        flex-direction: column;
+        input
+        {
+            border: none;
+            border-bottom: 2px solid #D4D4D4;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .time-stamp{
+        div{
+            display: flex;
+        }
+        .background-purple{
+            background-color: #9319FF !important;
+        }
+        button{
+            border: 1px solid #9319FF;
+            height: 24px;
+            width: 88px;
+            padding: 0;
+            font-size: 13px;
+            margin-right: 26px;
+            margin-bottom: 10px;
+            &:hover{
+                background-color: #9319FF;
+            }
+            &:focus{
+                background-color: #9319FF !important;
+            }
+            &:visited{
+                outline: none !important;
+                border:  none !important;
+                background-color: #9319FF !important;
+            }
+        }
+    }
+    .submit-button{
+        button{
+            background-color: #FFAC19;
+        }
+    }
+        
+}
+
+.border-blue{
+border-bottom: 2px solid #4A90E2 !important;
+}
+
+.ride-card{
+    height: 18rem;
+    width: 25rem;
+    padding: 1rem;
+    &>div{
+        width: 75%;
+    }
+    i{
+        color: #E0E0E0;
+    }
+
+    .start{
+        color:#9319FF
+    }
+
+    .ride-card-header{
+        width: 100%;
+        
+    }
+    img{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+    }
+    span{
+        color: #A1A1A1;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+// .ride-display{
+//     width:55rem
+// }
+#title{
+    color: #9319FF;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .main-display{
+     flex-direction: column;
+     align-items: center;
+    }
+    .ride-display{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &>div{
+
+            justify-content: center;
+        }
+    }
+}

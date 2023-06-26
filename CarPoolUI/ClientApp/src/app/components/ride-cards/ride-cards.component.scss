@@ -1,0 +1,29 @@
+.ride-card{
+    height: 18rem;
+    width: 25rem;
+    padding: 1rem;
+    &>div{
+        width: 75%;
+    }
+    i{
+        color: #E0E0E0;
+    }
+
+    .start{
+        color:#9319FF
+    }
+    .ride-card-header{
+        width: 100%;
+        
+    }
+    img{
+        border-radius: 50%;
+        height: 50px;
+    width: 50px;
+    }
+    span{
+        color: #A1A1A1;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}

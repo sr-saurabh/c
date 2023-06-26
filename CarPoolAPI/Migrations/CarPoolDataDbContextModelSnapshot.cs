@@ -28,31 +28,26 @@ namespace CarPoolAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("BookedFrom")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("BookedSeats")
                         .HasColumnType("int");
 
-                    b.Property<string>("BookedTo")
+                    b.Property<string>("Destination")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("RideOfferedBy")
+                    b.Property<Guid>("OfferedRideId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RideTakenBy")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Time")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("BookingId");
+
+                    b.HasIndex("OfferedRideId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("BookedRides");
                 });
@@ -82,20 +77,17 @@ namespace CarPoolAPI.Migrations
                     b.Property<int>("AvailableSeats")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("OfferedBy")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("OfferingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("OfferingFrom")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OfferingTo")
+                    b.Property<string>("Destination")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Time")
                         .HasColumnType("int");
@@ -103,9 +95,12 @@ namespace CarPoolAPI.Migrations
                     b.Property<int>("TotalSeats")
                         .HasColumnType("int");
 
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("OfferedRideId");
 
-                    b.HasIndex("OfferedBy");
+                    b.HasIndex("UserId");
 
                     b.ToTable("OfferedRides");
                 });
@@ -118,16 +113,18 @@ namespace CarPoolAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StoppageId"));
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("OfferedRideId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Position")
+                    b.Property<int>("StoppageNo")
                         .HasColumnType("int");
 
                     b.HasKey("StoppageId");
+
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("OfferedRideId");
 
@@ -157,22 +154,66 @@ namespace CarPoolAPI.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("CarPoolModels.Models.BookedRide", b =>
+                {
+                    b.HasOne("CarPoolModels.Models.OfferedRide", "OfferedRide")
+                        .WithMany("BookedRids")
+                        .HasForeignKey("OfferedRideId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CarPoolModels.Models.User", "User")
+                        .WithMany("BookedRides")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("OfferedRide");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CarPoolModels.Models.OfferedRide", b =>
                 {
-                    b.HasOne("CarPoolModels.Models.User", "Users")
-                        .WithMany()
-                        .HasForeignKey("OfferedBy");
+                    b.HasOne("CarPoolModels.Models.User", "User")
+                        .WithMany("OfferedRides")
+                        .HasForeignKey("UserId");
 
-                    b.Navigation("Users");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CarPoolModels.Models.Stoppage", b =>
                 {
+                    b.HasOne("CarPoolModels.Models.Location", "Locations")
+                        .WithMany("Stoppage")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CarPoolModels.Models.OfferedRide", "OfferedRides")
-                        .WithMany()
+                        .WithMany("Stoppages")
                         .HasForeignKey("OfferedRideId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Locations");
+
+                    b.Navigation("OfferedRides");
+                });
+
+            modelBuilder.Entity("CarPoolModels.Models.Location", b =>
+                {
+                    b.Navigation("Stoppage");
+                });
+
+            modelBuilder.Entity("CarPoolModels.Models.OfferedRide", b =>
+                {
+                    b.Navigation("BookedRids");
+
+                    b.Navigation("Stoppages");
+                });
+
+            modelBuilder.Entity("CarPoolModels.Models.User", b =>
+                {
+                    b.Navigation("BookedRides");
 
                     b.Navigation("OfferedRides");
                 });
