@@ -17,7 +17,7 @@ namespace CarPoolModels.Models
         public string Source { get; set; }
         public string Destination { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
 
         public int TotalSeats { get; set; }
 

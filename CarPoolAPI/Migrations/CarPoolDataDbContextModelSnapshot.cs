@@ -78,7 +78,7 @@ namespace CarPoolAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Destination")
                         .HasColumnType("nvarchar(max)");

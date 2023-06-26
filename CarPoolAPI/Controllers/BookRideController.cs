@@ -2,6 +2,7 @@
 using CarPoolServices.IContracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CarPoolAPI.Controllers
 {
@@ -18,12 +19,15 @@ namespace CarPoolAPI.Controllers
 
         [HttpGet]
         [Route("get-matched-rides")]
-        public IActionResult GetMatchedRides(string source, string destination, DateTime date, int seats)
+        public IActionResult GetMatchedRides(string source, string destination, DateOnly date, int time)
         {
             Guid userId = new Guid(User.FindFirst("Id").Value);
-            var rideCards=bookRidesServices.GetMatchedRide(source, destination, date, seats, userId);
-            if (rideCards == null)
-                return Ok("Rides not found!");
+            var rideCards = bookRidesServices.GetMatchedRide(source, destination, date, time, userId);
+            if (rideCards.IsNullOrEmpty())
+            {
+                return NoContent();
+                //return Ok("Rides not found!");
+            }
             return Ok(rideCards);
         }
 
@@ -44,7 +48,10 @@ namespace CarPoolAPI.Controllers
 
             var bookedRides = bookRidesServices.GetBookedRides(userId);
             if (bookedRides == null)
-                return Ok("No booked ride is available!");
+            {
+                return NoContent();
+                //return Ok("No booked ride is available!");
+            }
             return Ok(bookedRides);
         }
 

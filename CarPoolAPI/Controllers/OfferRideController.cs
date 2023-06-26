@@ -20,10 +20,10 @@ namespace CarPoolAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddOfferRide(OfferedRideWithLocations offeredRide)
+        public IActionResult AddOfferRide(OfferedRideWithLocations rideDetail)
         {
-            offeredRide.OfferedRides.UserId = new Guid(User.FindFirst("Id").Value);
-            var x = offerRideServices.AddOfferedRide(offeredRide);
+            rideDetail.OfferedRides.UserId = new Guid(User.FindFirst("Id").Value);
+            var x = offerRideServices.AddOfferedRide(rideDetail);
             return Ok(x);
         }
 
@@ -34,7 +34,9 @@ namespace CarPoolAPI.Controllers
             Guid userId = new Guid(User.FindFirst("Id").Value);
             var offeredRides=offerRideServices.GetOfferedRides(new Guid(User.FindFirst("Id").Value));
             if(offeredRides==null)
-                return Ok("No offered ride is available!");
+            {
+                return NoContent();
+            }
 
             return Ok(offeredRides);
         }

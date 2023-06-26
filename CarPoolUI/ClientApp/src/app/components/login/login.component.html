@@ -1,0 +1,98 @@
+<section class="row m-0">
+  <div class="col col-md-7 col-lg-8 banner">
+    <img src="../../../assets/logo (1).png" alt="" class="" />
+    <div>
+      <p class="slogan display-1">TURN <span class="top"> MILES </span></p>
+      <p class="slogan">INTO <span class="bottom"> MONEY</span></p>
+      <span>RIDES ON TAP</span>
+    </div>
+  </div>
+  <div
+    class="col col-md-5 col-lg-4 d-flex flex-column align-items-center login"
+    #login
+  >
+    <form
+      class="d-flex flex-column align-items-center auth-form"
+      #loginForm="ngForm"
+    >
+      <div class="form-title">
+        <p
+          class="d-flex flex-column align-items-center form-title"
+          class="text-white fw-bold fs-2"
+        >
+          {{ formTitle }}
+        </p>
+        <span></span>
+      </div>
+      <div class="mb-3 form-floating">
+        <input
+          type="email"
+          class="form-control"
+          #email="ngModel"
+          placeholder="Enter Email Id"
+          name="email"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          [(ngModel)]="formEmail"
+        />
+        <label for="email" class="placeholder-text">Enter Email Id</label>
+        <span *ngIf="email.invalid && email.touched" class="text-danger"
+          >Enter a valid Email Id</span
+        >
+      </div>
+
+      <div class="mb-3 form-floating position-relative">
+        <input
+          [type]="viewPassword ? 'text' : 'password'"
+          class="form-control"
+          #password="ngModel"
+          placeholder="Enter Password"
+          name="password"
+          autocomplete="off"
+          required
+          pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+          [(ngModel)]="formPassword"
+        />
+        <label for="password" [ngClass]="'placeholder-text'"
+          >Enter Password</label
+        >
+        <span class="eye-icon" (click)="showPassword()"
+          ><i class="bi bi-eye-fill"></i
+        ></span>
+        <span *ngIf="password.invalid && password.touched" class="text-danger"
+          >Enter a valid Password</span
+        >
+      </div>
+
+      <div class="mb-3 position-relative form-floating" *ngIf="isSignUp">
+        <input
+          type="password"
+          class="form-control"
+          #confPassword
+          placeholder="Enter Password"
+          name="confPassword"
+          autocomplete="off"
+          required
+          [(ngModel)]="confirmPassword"
+        />
+        <label for="confPassword" class="placeholder-text"
+          >Confirm Password</label
+        >
+      </div>
+      <p *ngIf="isError" class="text-danger fw-bold">{{ errorMessage }}</p>
+      <button
+        type="submit"
+        #btn
+        class="submit-btn"
+        (click)="loginForm.invalid ? '' : submit()"
+      >
+        Submit
+      </button>
+    </form>
+    <p class="text-white mt-2">
+      Already a member?
+      <span (click)="changeFormType()">{{ formReference | uppercase }}</span>
+    </p>
+    <span></span>
+  </div>
+</section>

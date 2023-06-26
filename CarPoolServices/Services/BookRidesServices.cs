@@ -26,7 +26,7 @@ namespace CarPoolServices.Services
             this.bookRidesRepository= bookRidesRepository;
         }
         
-        public List<RideCard>? GetMatchedRide(string source, string destination, DateTime date, int time, Guid userId)
+        public List<RideCard>? GetMatchedRide(string source, string destination, DateOnly date, int time, Guid userId)
         {
             int sourceId=locationServices.GetLocationId(source);
             int destinationId = locationServices.GetLocationId(destination);

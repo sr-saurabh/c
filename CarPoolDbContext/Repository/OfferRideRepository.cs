@@ -27,7 +27,7 @@ namespace CarPoolDbContext.Repository
             return "Offered ride added successfully";
         }
 
-        public List<OfferedRide> GetMatchedRide(int source, int destination, DateTime date, int time, Guid userId) 
+        public List<OfferedRide> GetMatchedRide(int source, int destination, DateOnly date, int time, Guid userId) 
         {
             var matchedRides= carPoolDbContext.OfferedRides.Include(obj => obj.Stoppages).Include(obj => obj.User).Where(ride => ride.UserId != userId &&
                                                         ride.Date == date &&

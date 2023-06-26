@@ -1,0 +1,143 @@
+<section>
+  <app-nav></app-nav>
+  <div class="d-flex main-display">
+    <form  #bookRide="ngForm" class="bg-white mb-5 flex-shrink-0">
+      <div class="d-flex justify-content-between form-title">
+        <div>
+          <h2 class="mb-0">Book a ride</h2>
+          <p class="text-secondary">we get you the matches asap !</p>
+        </div>
+        <div class="pisition-relative">
+            <div class="d-flex justify-content-end align-items-center pe-1 toggle-ride" (click)="toogleRide()">
+                <div class="toggle-circle"></div>
+            </div>
+        </div>
+      </div>
+
+      <div class="mt-4 mb-3 input-container">
+        <label for="from" class="fw-bold label-text">From</label>
+        <input
+          #from="ngModel"
+          type="text"
+          name="from"
+          id="from"
+          [(ngModel)]="ridefrom"
+          required
+          pattern="^[A-Z a-z]+$"
+        />
+      </div>
+
+      <div class="mb-3 input-container">
+        <label for="to" class="fw-bold label-text">To</label>
+        <input
+          #to="ngModel"
+          id="to"
+          type="text"
+          class="border-blue"
+          name="to"
+          required
+          [(ngModel)]="rideTo"
+          pattern="^[A-Z a-z]+$"
+        />
+      </div>
+
+      <div class="mb-3 input-container">
+        <label for="date" class="fw-bold label-text">Date</label>
+        <input
+          #date="ngModel"
+          type="date"
+          id="date"
+          min="{{crntDate|date:'yyyy-MM-dd'}}"
+          class="border-blue text-secondary"
+          name="date"
+          [(ngModel)]="rideDate"
+          required
+        />
+      </div>
+      <div class="time-stamp">
+        <label class="fw-bold label-text">Time</label>
+        <!-- <label for="time" class="fw-bold label-text">Time</label> -->
+        <div class="d-flex flex-wrap">
+          <div *ngFor="let time of timeStamp; let idx=index" >
+            <button type="radio" class="rounded-pill" id="{{idx}}" (click)="addTime(time)">{{time}}</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="submit-button">
+        <button type="submit" class="btn rounded-pill text-white" (click)="getMatches(bookRide.value)">
+          Submit
+        </button>
+      </div>
+    </form>
+    <!-- <div *ngIf="rideCards.length==0" class="ms-5">
+            <p>
+                No match Found!
+            </p>
+        </div> -->
+    <!-- <div *ngIf="rideCards.length!=0" class="ms-5"> -->
+
+    <div class="ms-5 ride-display">
+      <p id="title"class="fw-bold fs-2">Your Matches</p>
+      <div class="d-flex gap-5 flex-wrap ">
+          <!-- <app-ride-cards></app-ride-cards> -->
+
+        <div *ngFor="let ride of TempRideCards">
+          <div class="card ride-card">
+            <div
+              class="d-flex align-items-center justify-content-between ride-card-header"
+            >
+              <p class="fw-bolder fs-2">
+                {{ ride.name | titlecase }}
+              </p>
+              <img src="{{ ride.image }}" alt="" />
+            </div>
+
+            <div
+              class="d-flex align-items-center justify-content-between location"
+            >
+              <div>
+                <span> From</span>
+                <p>{{ ride.from }}</p>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle start"></i>
+                <i class="fa-solid fa-circle fa-2xs"></i>
+                <i class="fa-solid fa-circle fa-2xs"></i>
+                <i class="fa-solid fa-circle fa-2xs"></i>
+                <i class="fa-solid fa-circle fa-2xs"></i>
+                <i class="fa-sharp fa-solid fa-location-dot fa-lg start"></i>
+              </div>
+              <div>
+                <span> To</span>
+                <p>{{ ride.to }}</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <span>Date</span>
+                <p>{{ ride.date | date : "dd/MM/yyyy" }}</p>
+              </div>
+              <div>
+                <span>Time</span>
+                <p>{{ ride.time }}</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <span>Price</span>
+                <p>{{ ride.price }}</p>
+              </div>
+              <div>
+                <span>Seats</span>
+                <p>{{ ride.seats }}</p>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>
