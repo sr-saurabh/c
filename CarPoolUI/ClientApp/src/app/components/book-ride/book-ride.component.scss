@@ -65,14 +65,6 @@ form{
             &:hover{
                 background-color: #9319FF;
             }
-            &:focus{
-                background-color: #9319FF !important;
-            }
-            &:visited{
-                outline: none !important;
-                border:  none !important;
-                background-color: #9319FF !important;
-            }
         }
     }
     .submit-button{
@@ -117,12 +109,62 @@ border-bottom: 2px solid #4A90E2 !important;
         font-weight: 600;
     }
 }
-// .ride-display{
-//     width:55rem
-// }
+
 #title{
     color: #9319FF;
 }
+
+.seat-div{
+    height: 100%;
+    width: 100%;
+    // background: #D4D4D4;    
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+.seats{
+    height: 12rem;
+    width: 20rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 1rem;
+    border:1px solid #9319FF;
+    border-radius: 10px;
+    box-shadow: 0px 2px 13px 1px rgb(218, 216, 216);
+    &>button{
+        padding: 7px;
+        width: 9rem;
+        background: #FFAC19;
+        border: none;
+    }
+    .background-light-purple{
+        background-color: #7653FC !important;
+    }
+    .seats-btn button{
+
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+        background: transparent;
+        border: #A1A1A1 solid 2px;
+        &:hover{
+            border: none;
+            background: #7653FC;
+        }
+    }
+    i{
+        position: relative;
+        top: 22px;
+        color: #9319ff;
+        cursor: pointer; 
+    }
+}
+
 
 @media only screen and (max-width: 900px) {
 

@@ -1,8 +1,8 @@
 export interface RideCard {
     name: string;
     image:string;
-    from: string;
-    to: string;
+    source: string;
+    destination: string;
     time: string;
     date:Date;
     seats: number;

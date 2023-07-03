@@ -11,7 +11,7 @@ namespace CarPoolServices.IContracts
 {
     public interface IOfferRideServices
     {
-        string AddOfferedRide(OfferedRideWithLocations ride);
+        Response AddOfferedRide(OfferedRideWithLocations ride);
         List<RideCard>? GetOfferedRides(Guid userId);
     }
 }

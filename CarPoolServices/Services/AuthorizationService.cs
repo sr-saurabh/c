@@ -18,33 +18,28 @@ namespace CarPoolServices.Services
 {
     public class AuthorizationServices:IAuthorizationServices
     {
-        //private readonly CarPoolDataDbContext carPoolDbContext;
         private readonly IAuthenticationRepository authenticationRepository;
 
         public AuthorizationServices(IAuthenticationRepository authenticationRepository)
         {
-            //this.carPoolDbContext = carPoolDbContext;
             this.authenticationRepository = authenticationRepository;
         }
 
         public AuthResponse AddUser(string email, string password)
         {
-            //var users=carPoolDbContext.Users.Where(user => user.Email == email).ToList();
             var users= authenticationRepository.GetUserByEmail(email);
             if (users!=null)
-                return new AuthResponse("", "","Email is already present in the database.");
+                return new AuthResponse("", "", "", "", "Email is already present in the database.");
 
             Guid id = Guid.NewGuid();
-            string name = email.Split('@')[0];
+            string name = "User";
 
-            User newUser=new User { Email= email, Password = password,UserId=id,UserName=name,Image= "assets/imageNotAdded.jpg" };
+            User newUser=new() { Email= email, Password = password,UserId=id,UserName=name,Image= "../../../assets/imageNotAdded.jpg" };
 
             authenticationRepository.AddUser(newUser);
-            //carPoolDbContext.Users.Add(newUser);
-            //carPoolDbContext.SaveChanges();
 
             var token = GenerateJwtToken(newUser);
-            return new AuthResponse(newUser.Image, token, "Signup Successful");
+            return new AuthResponse(newUser.Image, newUser.UserName, newUser.Email, token, "Signup Successful");
         }
 
         public AuthResponse AuthenticateUser(string email, string password)
@@ -52,36 +47,40 @@ namespace CarPoolServices.Services
             var user = authenticationRepository.GetUserByEmail(email);
 
             if (user==null)
-                return new AuthResponse("", "", "Email not found, please signUp first.");
+                return new AuthResponse("", "","","", "Email not found, please signUp first.");
 
             user = authenticationRepository.ValidateUser(email,password);
 
             if (user==null)
-                return new AuthResponse("", "", "Email or password incorrect.");
+                return new AuthResponse("", "", "", "", "Email or password incorrect.");
 
             var token = GenerateJwtToken(user);
-            return new AuthResponse(user.Image, token, "Login Successful");
+            return new AuthResponse(user.Image,user.UserName,user.Email, token, "Login Successful");
         }
 
-        public string UpdatePassword(Guid userId, string newPassword, string oldPassword )
+        public Response UpdatePassword(Guid userId, string newPassword, string oldPassword )
         {
             var user= authenticationRepository.GetUserById(userId);
             if (user == null)
-                return "User not found!";
+                return new() { ResponseMessage = "User not found!" };
+            
             if (user.Password != oldPassword)
-                return "Password does not match!, Please Try Again..";
+                return new() { ResponseMessage = "Password does not match!, Please Try Again.." };
             user.Password = newPassword;
+            var x= authenticationRepository.UpdateUserDetailOrPassword(user);
+            return new() { ResponseMessage = x };
 
-            return authenticationRepository.UpdateUserDetailOrPassword(user);
         }
-        public string UpdateUserDetail(Guid userId,string name, string image)
+        public Response UpdateUserDetail(Guid userId,string name, string image)
         {
             var user = authenticationRepository.GetUserById(userId);
             if (user == null)
-                return "User not found!";
+                return new() { ResponseMessage = "User not found!" };
             user.UserName = name;
             user.Image = image;
-            return authenticationRepository.UpdateUserDetailOrPassword(user);
+            var x=authenticationRepository.UpdateUserDetailOrPassword(user);
+            
+            return new() { ResponseMessage =x };
         }
 
 
@@ -93,8 +92,6 @@ namespace CarPoolServices.Services
 
             var authClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Email, user.Email),
                 new Claim("Id", user.UserId.ToString()),
 
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
@@ -104,7 +101,7 @@ namespace CarPoolServices.Services
                 issuer: "https://localhost:7221",
                 audience: "https://localhost:7221",
                 claims: authClaims,
-                expires: DateTime.Now.AddMinutes(60),
+                expires: DateTime.Now.AddDays(1),
                 signingCredentials: credentials
             );
             return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);

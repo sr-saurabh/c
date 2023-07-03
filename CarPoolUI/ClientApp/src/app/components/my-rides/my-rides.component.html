@@ -2,10 +2,10 @@
   <app-nav></app-nav>
   <div class="d-flex gap-4 ride-container">
     <div>
-      <p class="booked-headings">Booked Rides</p>
-      <p *ngIf="TempRideCards.length<=0">No ride found!</p>
+      <p class="text-white div-headings" id="booked-Ride-heading">Booked Rides</p>
+      <p *ngIf="bookedRides.length<=0">No ride found!</p>
 
-      <div *ngFor="let ride of TempRideCards">
+      <div *ngFor="let ride of bookedRides">
         <div class="mb-2 card ride-card">
           <div class="d-flex align-items-center justify-content-between ride-card-header">
             <p class="fw-bolder fs-2">
@@ -17,7 +17,7 @@
           <div class="d-flex align-items-center justify-content-between location">
             <div>
               <span> from</span>
-              <p>{{ ride.from }}</p>
+              <p>{{ ride.source }}</p>
             </div>
             <div class="d-flex align-items-center gap-2">
               <i class="fa-solid fa-circle start"></i>
@@ -29,7 +29,7 @@
             </div>
             <div>
               <span> to</span>
-              <p>{{ ride.to }}</p>
+              <p>{{ ride.destination }}</p>
             </div>
           </div>
 
@@ -47,7 +47,7 @@
           <div class="d-flex align-items-center justify-content-between">
             <div>
               <span>Price</span>
-              <p>{{ ride.price }}</p>
+              <p>{{ ride.price }}$</p>
             </div>
             <div>
               <span>Seats</span>
@@ -60,10 +60,10 @@
 
 
     <div class="ms-3">
-        <p class="booked-headings">Offered Rides</p>
-        <p *ngIf="TempRideCards.length<=0">No ride found!</p>
+        <p class=" text-white div-headings">Offered Rides</p>
+        <p *ngIf="offeredRides.length<=0">No ride found!</p>
 
-        <div *ngFor="let ride of TempRideCards">
+        <div *ngFor="let ride of offeredRides">
             <div class="mb-2 card ride-card">
               <div class="d-flex align-items-center justify-content-between ride-card-header">
                 <p class="fw-bolder fs-2">
@@ -75,7 +75,7 @@
               <div class="d-flex align-items-center justify-content-between location">
                 <div>
                   <span> from</span>
-                  <p>{{ ride.from }}</p>
+                  <p>{{ ride.source }}</p>
                 </div>
                 <div class="d-flex align-items-center gap-2">
                   <i class="fa-solid fa-circle start"></i>
@@ -87,7 +87,7 @@
                 </div>
                 <div>
                   <span> to</span>
-                  <p>{{ ride.to }}</p>
+                  <p>{{ ride.destination }}</p>
                 </div>
               </div>
     
@@ -105,7 +105,7 @@
               <div class="d-flex align-items-center justify-content-between">
                 <div>
                   <span>Price</span>
-                  <p>{{ ride.price }}</p>
+                  <p>{{ ride.price }}$</p>
                 </div>
                 <div>
                   <span>Seats</span>

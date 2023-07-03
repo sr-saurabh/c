@@ -1,0 +1,126 @@
+<section>
+    <app-nav></app-nav>
+    <div class="d-flex">
+        <div class="d-flex justify-content-between me-5 user-div">
+            <div>
+                <p>Name: <span class="fw-bold">{{name |titlecase}}</span></p>
+                <!-- <p>Email: <span class="fw-bold">hjghhjkS@hjfgfn.ya</span></p> -->
+                <p>Email: <span class="fw-bolder">{{email}}</span></p>
+            </div>
+            <div class="d-flex">
+                <div >
+                    <p>Image</p>
+                    <img src="{{ image }}" alt="{{name}}" />
+                </div>
+                <i *ngIf="!(isUpdateUserDetail || isUpdatePassword)" class="fa-solid fa-user-pen fa-xl" style="color: #FFAC19;" (click)="openUserDetailForm()"></i>
+            </div>
+            
+        </div>
+
+        <div>
+            <button *ngIf="!(isUpdateUserDetail || isUpdatePassword)"  class="text-white password-form-btn"(click)="openPasswordForm()" >Update Password</button>
+        </div>
+
+        <div class="update">
+            <div *ngIf="isUpdateUserDetail" class="update-user">
+                <p class="fs-3 fw-bold text-center">Update User Details</p>
+                <div class="mb-3 form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      #name="ngModel"
+                      [(ngModel)]="newName"
+                      placeholder="Enter name"
+                      required
+                      pattern="^[A-Z a-z]+$"/>
+                    <label for="name" class="placeholder-text">Enter name</label>
+                    <p *ngIf="name.invalid && name.touched" class="mb-1 text-warning">Enter a valid name.</p>
+                </div>
+                <div class="mb-3 d-block">
+                    <input
+                     type="file" accept="image/*"
+                      class="form-control"
+                      #image
+                      placeholder="Enter name"
+                      name="name"
+                      required
+                      pattern="^[a-z][a-z '-.,]{0,31}$" (change)="saveImage($event)"/>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="bg-danger" (click)="openUserDetailForm()">Cancle</button>
+                    <button (click)="updateUser(name.invalid)">Update</button>
+                </div>
+                <p *ngIf="isError" class="text-danger mb-0">Fill all the value correctly!</p>
+            </div>
+
+            <div *ngIf="isUpdatePassword" class="update-password">
+                <p class="fs-3 fw-bold text-center">Update Password</p>
+                <div class="mb-2 form-floating position-relative">
+                    <input
+                    [type]="viewOldPassword ? 'text' : 'password'"
+                      class="form-control"
+                      #oldPassword="ngModel"
+                      [(ngModel)]="userPassword.oldPassword"
+                      placeholder="Enter Password"
+                      name="password"
+                      autocomplete="off"
+                      required
+                      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    />
+                    <label for="password" [ngClass]="'placeholder-text'">Old Password</label>
+                    <span class="eye-icon" (click)="showPassword('old')">
+                        <i class="bi bi-eye-fill"></i>
+                    </span>
+                    <p *ngIf="oldPassword.touched && oldPassword.invalid" class="text-warning mb-0">This field is required!</p>
+
+                </div>
+
+
+                <div class="mb-2 form-floating position-relative">
+                    <input
+                    [type]="viewNewPassword ? 'text' : 'password'"
+                      class="form-control"
+                      #newPassword="ngModel"
+                      [(ngModel)]="userPassword.newPassword"
+                      placeholder="Enter Password"
+                      name="password"
+                      autocomplete="off"
+                      required
+                      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    />
+                    <label for="password" [ngClass]="'placeholder-text'">New Password</label>
+                    <span class="eye-icon" (click)="showPassword('new')">
+                        <i class="bi bi-eye-fill"></i>
+                    </span>
+                    <p *ngIf="newPassword.touched && newPassword.invalid" class="text-warning mb-0">This field is required!</p>
+                </div>
+
+
+                <div class="mb-2 form-floating position-relative">
+                    <input
+                        type="password"
+                      class="form-control"
+                      #confPassword="ngModel"
+                      [(ngModel)]="confirmPassword"
+                      placeholder="Enter Password"
+                      name="password"
+                      autocomplete="off"
+                      required
+                      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                    />
+                    <label for="password" [ngClass]="'placeholder-text'">Confirm Password</label>
+                    <p *ngIf="confPassword.touched && confPassword.invalid" class="text-warning mb-0">This field is required!</p>
+
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button class="bg-danger" (click)="openPasswordForm()">Cancle</button>
+                    <button (click)="updatePassword(confPassword.invalid, newPassword.invalid, oldPassword.invalid ) ">Update</button>
+                </div>
+                <p *ngIf="isError" class="text-danger mb-0">Fill all the value correctly!</p>
+                <p *ngIf="!isPasswordMatching" class="text-danger mb-0">Password does not match!</p>
+                <p *ngIf="isPasswordSame" class="text-danger mb-0 same-passwowd">New password should be different form old password. </p>
+            </div>
+        </div>
+    </div>
+</section>

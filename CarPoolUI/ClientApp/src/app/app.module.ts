@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HttpInterceptorInterceptor } from './http-interceptor.interceptor';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,18 +13,19 @@ import { BookRideComponent } from './components/book-ride/book-ride.component';
 import { OfferRideComponent } from './components/offer-ride/offer-ride.component';
 import { RideCardsComponent } from './components/ride-cards/ride-cards.component';
 import { MyRidesComponent } from './components/my-rides/my-rides.component';
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent,
     NavComponent,
     HomeComponent,
     BookRideComponent,
     OfferRideComponent,
     RideCardsComponent,
     MyRidesComponent,
+    MyprofileComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

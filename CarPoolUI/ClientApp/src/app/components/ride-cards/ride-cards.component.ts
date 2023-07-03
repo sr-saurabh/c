@@ -24,8 +24,8 @@ export class RideCardsComponent implements OnInit {
     this.ride1={
       name:"saurabh kumar",
       image: "assets/saurabh.jpg",
-      from:"Patna",
-      to:"Bhilai",
+      source:"Patna",
+      destination:"Bhilai",
       date:new Date(),
       time:"6pm - 9pm",
       seats:2,

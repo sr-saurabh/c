@@ -2,6 +2,7 @@
 using CarPoolModels.ApiModels;
 using CarPoolModels.Models;
 using CarPoolServices.IContracts;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,21 +43,24 @@ namespace CarPoolServices.Services
             return ridecards;
         }
     
-        public string BookRide(RideCard rideCard, Guid userId)
+        public Response BookRide(RideCard rideCard, Guid userId)
         {
             if (offerRideRepository.IsSeatsAvailable(rideCard.Seats, rideCard.Id))
             {
                 BookedRide bookedRide = new();
-                bookedRide.BookingId = new Guid();
+                bookedRide.BookingId = Guid.NewGuid();
                 bookedRide.UserId = userId;
                 bookedRide.OfferedRideId = rideCard.Id;
                 bookedRide.Source = rideCard.Source;
                 bookedRide.Destination = rideCard.Destination;
                 bookedRide.BookedSeats = rideCard.Seats;
-
-                return bookRidesRepository.AddBookedRides(bookedRide);
+                var result = bookRidesRepository.AddBookedRides(bookedRide);
+                Response response = new() { ResponseMessage = result };
+                offerRideRepository.UpdateOfferedRide(rideCard.Id, rideCard.Seats);
+                return response;
             }
-            return "Ride can not be booked";
+
+            return new() { ResponseMessage = "Ride can not be booked" };
         }
 
 

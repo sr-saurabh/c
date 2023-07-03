@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,21 +31,25 @@ namespace CarPoolServices.Services
             this.commonServices = commonServices;
         }
 
-        public string AddOfferedRide(OfferedRideWithLocations ride)
+        public Response AddOfferedRide(OfferedRideWithLocations ride)
         {
             if (ride.OfferedRides == null)
-                return "Please fill all details";
+            {
+                return new Response() { ResponseMessage = "Please fill all details" }; ;
+            }
 
             List<string> locations = new(){ride.OfferedRides.Source};
             if(ride.Locations!=null)
                 locations.AddRange(ride.Locations);
+
             locations.Add(ride.OfferedRides.Destination);
 
 
             locationServices.AddLocations(locations);
             var x= offerRideRepository.AddOfferedRide(ride.OfferedRides);
+            Response response = new(){ ResponseMessage = x};
             AddStoppage(locations, ride.OfferedRides.OfferedRideId);
-            return x;
+            return response;
         }
 
         public List<RideCard>? GetOfferedRides(Guid userId)
@@ -56,6 +61,7 @@ namespace CarPoolServices.Services
             var offeredRideCards=commonServices.CreateRideCard("", "", offeredRides, null, false);
             return offeredRideCards;
         }
+
 
         private void AddStoppage(List<string> locations,Guid offeredRideId)
         {
@@ -70,6 +76,10 @@ namespace CarPoolServices.Services
             }
             offerRideRepository.AddStoppages(stoppages);
         }
+    
+
+
+    
     }
 }
 

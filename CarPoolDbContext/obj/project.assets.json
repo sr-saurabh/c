@@ -3482,19 +3482,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\saura\\.nuget\\packages\\": {}
+    "C:\\Users\\Saurabh.k\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj",
+      "projectUniqueName": "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj",
       "projectName": "CarPoolDbContext",
-      "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj",
-      "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-      "outputPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\obj\\",
+      "projectPath": "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj",
+      "packagesPath": "C:\\Users\\Saurabh.k\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\carpool\\CarPoolDbContext\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Saurabh.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3508,8 +3508,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
-              "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj"
+            "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj"
             }
           }
         }
@@ -3555,7 +3555,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
