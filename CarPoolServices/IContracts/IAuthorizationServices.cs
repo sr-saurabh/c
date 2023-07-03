@@ -12,7 +12,7 @@ namespace CarPoolServices.IContracts
     {
         public AuthResponse AddUser(string email, string password);
         public AuthResponse AuthenticateUser(string email, string password);
-        string UpdateUserDetail(Guid userId, string name, string image);
-        string UpdatePassword(Guid userId, string newPassword, string oldPassword);
+        Response UpdateUserDetail(Guid userId, string name, string image);
+        Response UpdatePassword(Guid userId, string newPassword, string oldPassword);
     }
 }

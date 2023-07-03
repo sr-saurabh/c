@@ -1,4 +1,5 @@
-﻿using CarPoolModels.Models;
+﻿using CarPoolModels.ApiModels;
+using CarPoolModels.Models;
 using CarPoolServices.IContracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -43,18 +44,18 @@ namespace CarPoolAPI.Controllers
 
         [HttpPost]
         [Route("update-user-details")]
-        public IActionResult ChangeUserDetails(string name, string image)
+        public IActionResult ChangeUserDetails(ChangeUser user)
         {
             try
             {
                 if (User.FindFirst("Id") == null)
                     throw new Exception();
-                if (name == "" || image == "")
+                if (user.NewName == "" || user.NewImage == "")
                     return BadRequest("Please Fill all the details");
 
                 var id=new Guid(User.FindFirst("Id").Value);
 
-                return Ok(authorizationServices.UpdateUserDetail(id, name, image));
+                return Ok(authorizationServices.UpdateUserDetail(id, user.NewName, user.NewImage));
 
             }
             catch { return BadRequest("Please Login First"); }
@@ -64,18 +65,18 @@ namespace CarPoolAPI.Controllers
 
         [HttpPost]
         [Route("change-password")]
-        public IActionResult ChangePassword(string newPassword, string oldPassword)
+        public IActionResult ChangePassword(UpdatePassword updatePassword)
         {
             try
             {
                 if (User.FindFirst("Id")==null)
                     throw new Exception();
-                if(newPassword=="" || oldPassword=="")
+                if(updatePassword.NewPassword == "" || updatePassword.OldPassword == "")
                     return BadRequest("Please Fill all the details");
 
                 var id = new Guid(User.FindFirst("Id").Value);
 
-                return Ok(authorizationServices.UpdatePassword(id, newPassword, oldPassword));
+                return Ok(authorizationServices.UpdatePassword(id, updatePassword.NewPassword, updatePassword.OldPassword));
             }
             catch { return BadRequest("Please Login First"); }
         }

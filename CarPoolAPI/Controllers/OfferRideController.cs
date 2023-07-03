@@ -3,7 +3,9 @@ using CarPoolModels.Models;
 using CarPoolServices.IContracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace CarPoolAPI.Controllers
 {
@@ -25,6 +27,7 @@ namespace CarPoolAPI.Controllers
             rideDetail.OfferedRides.UserId = new Guid(User.FindFirst("Id").Value);
             var x = offerRideServices.AddOfferedRide(rideDetail);
             return Ok(x);
+            //return Ok(x);
         }
 
         [HttpGet]

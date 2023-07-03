@@ -12,7 +12,7 @@ section{
 }
 form
 {
-    height: 33rem;
+    height: 35rem;
     width: 26rem;
     border-radius: 9px;
     padding: 2rem;
@@ -69,11 +69,14 @@ form
             &:focus{
                 outline: none;
             }
+            // &[type="text"] {
+            //     text-transform: lowercase;
+            // }
         }
         i{
             position: relative;
             left: 20rem;
-            bottom: 1.5rem;
+            bottom: .75rem;
             color: #9319FF;
             cursor:pointer;
         }
@@ -99,14 +102,6 @@ form
             margin-bottom: 10px;
             &:hover{
                 background-color: #9319FF;
-            }
-            &:focus{
-                background-color: #9319FF !important;
-            }
-            &:visited{
-                outline: none !important;
-                border:  none !important;
-                background-color: #9319FF !important;
             }
         }
     }
@@ -138,6 +133,7 @@ border-bottom: 2px solid #4A90E2 !important;
     }
 }
 .seats-btn{
+    
     button{
 
         height: 3rem;
@@ -153,6 +149,10 @@ border-bottom: 2px solid #4A90E2 !important;
             background: #7653FC;
             opacity: 1;
         }
+    }
+    .background-light-purple{
+        opacity: 1 !important;
+        background-color: #7653FC !important;
     }
     margin-bottom: 1rem;
     margin-right: 3rem;

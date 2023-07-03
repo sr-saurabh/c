@@ -22,8 +22,6 @@ namespace CarPoolModels.Models
 
         public Guid OfferedRideId { get; set; }
         public OfferedRide OfferedRide { get; set; }
-
-        [ForeignKey("RideTakenBy")]
         public Guid? UserId { get; set; }
         public User User { get; set; }
 

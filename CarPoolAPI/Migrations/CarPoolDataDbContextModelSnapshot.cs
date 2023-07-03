@@ -157,7 +157,7 @@ namespace CarPoolAPI.Migrations
             modelBuilder.Entity("CarPoolModels.Models.BookedRide", b =>
                 {
                     b.HasOne("CarPoolModels.Models.OfferedRide", "OfferedRide")
-                        .WithMany("BookedRids")
+                        .WithMany("BookedRides")
                         .HasForeignKey("OfferedRideId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -206,7 +206,7 @@ namespace CarPoolAPI.Migrations
 
             modelBuilder.Entity("CarPoolModels.Models.OfferedRide", b =>
                 {
-                    b.Navigation("BookedRids");
+                    b.Navigation("BookedRides");
 
                     b.Navigation("Stoppages");
                 });

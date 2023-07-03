@@ -4164,19 +4164,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\saura\\.nuget\\packages\\": {}
+    "C:\\Users\\Saurabh.k\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolServices\\CarPoolServices.csproj",
+      "projectUniqueName": "C:\\Projects\\carpool\\CarPoolServices\\CarPoolServices.csproj",
       "projectName": "CarPoolServices",
-      "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolServices\\CarPoolServices.csproj",
-      "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-      "outputPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolServices\\obj\\",
+      "projectPath": "C:\\Projects\\carpool\\CarPoolServices\\CarPoolServices.csproj",
+      "packagesPath": "C:\\Users\\Saurabh.k\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\carpool\\CarPoolServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Saurabh.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4190,11 +4190,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
-              "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
+            "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
             },
-            "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
-              "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj"
+            "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj"
             }
           }
         }
@@ -4248,7 +4248,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

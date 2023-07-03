@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthResponse } from 'src/app/models/auth-response';
 import { AuthService } from 'src/app/services/auth.service';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('btn') submitBtn!: ElementRef;
   @ViewChild('login') loginDiv!: ElementRef;
-  constructor( private authService:AuthService) { }
+  constructor( private authService:AuthService,  private router:Router) { }
 
   ngOnInit(): void {
     
@@ -52,8 +54,10 @@ export class LoginComponent implements OnInit {
 
   
   submit(){   
+    //signup
     if(this.formTitle=="Sign Up") 
     {
+      // check password and confirmPassword
       if(this.formPassword!=this.confirmPassword)
       {
         this.errorMessage="Password does not match.";
@@ -64,7 +68,6 @@ export class LoginComponent implements OnInit {
         this.errorMessage="";
         this.isError=false;
         this.authService.signup(this.formEmail,this.formPassword).subscribe((response)=>{
-          console.log(response);
           this.saveResponse(response);
         },
         (error)=>{
@@ -75,11 +78,11 @@ export class LoginComponent implements OnInit {
         );
       }
     }
+    //login
     else
     {
       this.authService.login(this.formEmail,this.formPassword).subscribe((response)=>{
         this.saveResponse(response);
-        console.log(response);
       },
       (error)=>{
         console.log(error.error);
@@ -94,6 +97,11 @@ export class LoginComponent implements OnInit {
 
   saveResponse(response:AuthResponse)
   {
-    localStorage.setItem("response",JSON.stringify(response))
+    localStorage.setItem("response",JSON.stringify(response));
+    console.log(response);
+    // var x=jwt_decode(response.token);
+    // console.log(x);
+    
+    this.router.navigate(['/home']);
   }
 }

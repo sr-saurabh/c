@@ -15,19 +15,22 @@ namespace CarPoolServices.Services
         {
 
             List <RideCard> rideCards = new();
-                    RideCard  ridecard= new ();
-            if(offeredRides==null)
+                    //RideCard  ridecard= new ();
+            if(offeredRides==null  && bookedRides!=null)
             {
-                for (int i = 0; i < bookedRides.Count(); i++)
+                for (int i = 0; i < bookedRides.Count; i++)
                 {
-                   var  ride= bookedRides[i];
+                    RideCard ridecard = new();
+                    var  ride= bookedRides[i];
                     ridecard.Id=ride.BookingId;
                     ridecard.Destination=ride.Destination;
                     ridecard.Source=ride.Source;
                     ridecard.Seats = ride.BookedSeats;
+
                     ridecard.Time = ride.OfferedRide.Time;
                     ridecard.Price = ride.OfferedRide.Price;
                     ridecard.Date = ride.OfferedRide.Date;
+
                     ridecard.Image = ride.OfferedRide.User.Image;
                     ridecard.Name = ride.OfferedRide.User.UserName;
 
@@ -36,10 +39,11 @@ namespace CarPoolServices.Services
                 return rideCards;
             }
 
-            if (isForGetMatch)
+            if (isForGetMatch && offeredRides != null)
             {
-                for (int i = 0; i < offeredRides.Count(); i++)
+                for (int i = 0; i < offeredRides.Count; i++)
                 {
+                    RideCard ridecard = new();
                     var ride = offeredRides[i];
                     ridecard.Id = ride.OfferedRideId;
                     ridecard.Destination = destination;
@@ -55,21 +59,25 @@ namespace CarPoolServices.Services
                 }
                 return rideCards;
             }
+
+            
             for (int i = 0; i < offeredRides.Count(); i++)
             {
+                RideCard ridecard = new();
                 var oRide = offeredRides[i];
                 ridecard.Id = oRide.OfferedRideId;
                 ridecard.Time = oRide.Time;
                 ridecard.Price = oRide.Price;
                 ridecard.Date = oRide.Date;
 
-                var bRides = oRide.BookedRids.ToList();
+                var bRides = oRide.BookedRides.ToList();
                 for (int j=0;j<bRides.Count();j++)
                 {
                     var bRide = bRides[j];
                     ridecard.Destination = bRide.Destination;
                     ridecard.Source = bRide.Source;
                     ridecard.Seats = bRide.BookedSeats;
+
                     ridecard.Image = bRide.User.Image;
                     ridecard.Name = bRide.User.UserName;
 

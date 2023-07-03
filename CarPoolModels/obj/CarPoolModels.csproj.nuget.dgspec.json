@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {}
+    "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj": {}
   },
   "projects": {
-    "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
+    "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj",
+        "projectUniqueName": "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj",
         "projectName": "CarPoolModels",
-        "projectPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\CarPoolModels.csproj",
-        "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-        "outputPath": "E:\\saurabh-GIT\\Task 9 CarPool\\carpool\\CarPoolModels\\obj\\",
+        "projectPath": "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj",
+        "packagesPath": "C:\\Users\\Saurabh.k\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\carpool\\CarPoolModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Saurabh.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

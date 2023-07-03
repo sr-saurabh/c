@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "CarPool"
+  "defaultProject": "CarPool",
+  "cli": {
+    "analytics": false
+  }
 }

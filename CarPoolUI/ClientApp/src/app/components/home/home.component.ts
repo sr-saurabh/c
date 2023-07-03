@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
   constructor(private router :Router) { }
 
   ngOnInit(): void {
+    var data=localStorage.getItem("response");
+    if(data!=null)
+      this.name=JSON.parse(data)["name"];
   }
   openBookRide(){
     this.router.navigate(['book-ride']);

@@ -3,12 +3,12 @@
         <img src="assets/logo (1).png" alt="" class="logo" (click)="goToHome()">
     </div>
     <div class="d-flex position-relative profile">
-        <p class="d-flex align-self-center me-2 fw-bold">{{userName}}</p>
-        <img src="assets/saurabh.jpg" alt=""  (click)="isDropdown?isDropdown=false:isDropdown=true"class="rounded-circle">
+        <p class="d-flex align-self-center me-2 fw-bold">{{userName |titlecase}}</p>
+        <img src="{{ userImage }}" alt=""  (click)="isDropdown?isDropdown=false:isDropdown=true"class="rounded-circle">
         <ul *ngIf="isDropdown" class="list-unstyled cursor-pointer user-option">
-            <li class="d-flex align-self-center">Profile</li>
+            <li class="d-flex align-self-center" (click)="nevigateToMyProfile()">Profile</li>
             <li class="d-flex align-self-center" (click)="nevigateToMyRides()">My Rides</li>
-            <li class="d-flex align-self-center">Logout</li>
+            <li class="d-flex align-self-center" (click)="logout()">Logout</li>
         </ul>
     </div>
 </section>

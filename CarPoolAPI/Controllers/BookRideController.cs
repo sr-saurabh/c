@@ -31,7 +31,7 @@ namespace CarPoolAPI.Controllers
             return Ok(rideCards);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("book-ride")]
         public IActionResult BookRide(RideCard ride)
         {

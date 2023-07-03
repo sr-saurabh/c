@@ -1,11 +1,14 @@
 .ride-container{
     margin: 3rem 2rem;
-    .booked-headings{
+    .div-headings{
         border-radius: 6px;
         background: #FFAC19;
         padding: 0.5rem 1.5rem;
         width: 10rem;
         text-align: center;    
+    }
+    #booked-Ride-heading{
+        background:#9319FF ;
     }
 }
 .ride-card{

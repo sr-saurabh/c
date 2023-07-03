@@ -11,7 +11,7 @@ namespace CarPoolServices.IContracts
     public interface IBookRidesServices
     {
         List<RideCard> GetMatchedRide(string source, string destination, DateOnly date, int time, Guid userId);
-        string BookRide(RideCard rideCard, Guid userId);
+        Response BookRide(RideCard rideCard, Guid userId);
         List<RideCard>? GetBookedRides(Guid userId);
     }
 }
