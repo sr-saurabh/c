@@ -40,23 +40,25 @@ export class OfferRideComponent implements OnInit {
 
   validateDetail(isFormValid:boolean|null)
   {  
+    if(!isFormValid || this.isTimeValid==false)
+    {
+      this.isValidationSuccess=false;
+      return;
+    }
+    else
+    {
+      if(this.offerData.source==undefined || this.offerData.destination==undefined|| this.offerData.source.toLowerCase()===this.offerData.destination.toLowerCase())
+      {
+        alert("Source and destination should be different.");
+        this.isValidationSuccess=false;
+      return;
+    }
+    this.isValidationSuccess=true;
+    }
     if(this.offerData.time==undefined)
       this.isTimeValid=false;
-    else
+    else 
       this.isTimeValid=true;
-
-    if(!isFormValid || this.isTimeValid==false)
-      this.isValidationSuccess=false;
-      else
-      {
-        if(this.offerData.source==undefined || this.offerData.destination==undefined|| this.offerData.source.toLowerCase()===this.offerData.destination.toLowerCase())
-        {
-          alert("Source and destination should be different.");
-          this.isValidationSuccess=false;
-        return;
-      }
-      this.isValidationSuccess=true;
-    }
   }
   
   removeStop(idx:number){
