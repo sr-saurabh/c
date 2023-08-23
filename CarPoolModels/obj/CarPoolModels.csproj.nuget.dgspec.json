@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj": {}
+    "C:\\Projects\\carpool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
+    "C:\\Projects\\carpool\\carpool\\CarPoolModels\\CarPoolModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj",
+        "projectUniqueName": "C:\\Projects\\carpool\\carpool\\CarPoolModels\\CarPoolModels.csproj",
         "projectName": "CarPoolModels",
-        "projectPath": "C:\\Projects\\carpool\\CarPoolModels\\CarPoolModels.csproj",
+        "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolModels\\CarPoolModels.csproj",
         "packagesPath": "C:\\Users\\Saurabh.k\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\carpool\\CarPoolModels\\obj\\",
+        "outputPath": "C:\\Projects\\carpool\\carpool\\CarPoolModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Saurabh.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
