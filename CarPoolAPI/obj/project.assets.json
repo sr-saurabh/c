@@ -4779,11 +4779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
+      "projectUniqueName": "C:\\Projects\\carpool\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
       "projectName": "CarPoolAPI",
-      "projectPath": "C:\\Projects\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
+      "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
       "packagesPath": "C:\\Users\\Saurabh.k\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\carpool\\CarPoolAPI\\obj\\",
+      "outputPath": "C:\\Projects\\carpool\\carpool\\CarPoolAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Saurabh.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4800,11 +4800,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
-              "projectPath": "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
+            "C:\\Projects\\carpool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
             },
-            "C:\\Projects\\carpool\\CarPoolServices\\CarPoolServices.csproj": {
-              "projectPath": "C:\\Projects\\carpool\\CarPoolServices\\CarPoolServices.csproj"
+            "C:\\Projects\\carpool\\carpool\\CarPoolServices\\CarPoolServices.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolServices\\CarPoolServices.csproj"
             }
           }
         }
