@@ -11,8 +11,8 @@ section{
     }
 }
 form{
-    height: 33rem;
-    width: 26rem;
+    height: 35rem;
+    max-width: 26rem;
     // min-width: 26rem;
     border-radius: 9px;
     padding: 2rem;
@@ -30,7 +30,24 @@ form{
             border-radius: 50%;
         }
     }
-    
+    .icon{
+        margin-top: 40px;
+        i{
+            color: #E0E0E0;
+            margin-bottom: 15px;
+            font-size: 0.5rem;
+        }
+        
+        .start{
+            color:#9319FF;
+            font-size: 0.9rem;
+        }
+        .end{
+            color:#9319FF;
+            margin-top: 3px;
+            font-size: 17px; 
+        }
+    }
     .label-text{
         color: #A1A1A1;
     }
@@ -38,6 +55,7 @@ form{
         width:90%;
         display: flex;
         flex-direction: column;
+        margin-right: 0px !important;
         input
         {
             border: none;

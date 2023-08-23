@@ -4779,11 +4779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
+      "projectUniqueName": "C:\\Projects\\carpool\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
       "projectName": "CarPoolAPI",
-      "projectPath": "C:\\Projects\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
+      "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolAPI\\CarPoolAPI.csproj",
       "packagesPath": "C:\\Users\\Saurabh.k\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\carpool\\CarPoolAPI\\obj\\",
+      "outputPath": "C:\\Projects\\carpool\\carpool\\CarPoolAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Saurabh.k\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4794,18 +4794,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
-              "projectPath": "C:\\Projects\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
+            "C:\\Projects\\carpool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolDbContext\\CarPoolDbContext.csproj"
             },
-            "C:\\Projects\\carpool\\CarPoolServices\\CarPoolServices.csproj": {
-              "projectPath": "C:\\Projects\\carpool\\CarPoolServices\\CarPoolServices.csproj"
+            "C:\\Projects\\carpool\\carpool\\CarPoolServices\\CarPoolServices.csproj": {
+              "projectPath": "C:\\Projects\\carpool\\carpool\\CarPoolServices\\CarPoolServices.csproj"
             }
           }
         }
@@ -4878,7 +4877,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

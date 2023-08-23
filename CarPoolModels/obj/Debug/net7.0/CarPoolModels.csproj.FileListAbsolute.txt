@@ -40,3 +40,17 @@ C:\Projects\carpool\CarPoolModels\obj\Debug\net7.0\refint\CarPoolModels.dll
 C:\Projects\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.pdb
 C:\Projects\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.genruntimeconfig.cache
 C:\Projects\carpool\CarPoolModels\obj\Debug\net7.0\ref\CarPoolModels.dll
+C:\Projects\carpool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.deps.json
+C:\Projects\carpool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.runtimeconfig.json
+C:\Projects\carpool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.dll
+C:\Projects\carpool\carpool\CarPoolModels\bin\Debug\net7.0\CarPoolModels.pdb
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.csproj.AssemblyReference.cache
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.AssemblyInfoInputs.cache
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.AssemblyInfo.cs
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.csproj.CoreCompileInputs.cache
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.dll
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\refint\CarPoolModels.dll
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.pdb
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\CarPoolModels.genruntimeconfig.cache
+C:\Projects\carpool\carpool\CarPoolModels\obj\Debug\net7.0\ref\CarPoolModels.dll

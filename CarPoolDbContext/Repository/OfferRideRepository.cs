@@ -67,6 +67,8 @@ namespace CarPoolDbContext.Repository
 
         public List<OfferedRide>? GetOfferedRides(Guid userId)
         {
+            //var offeredRides1 = carPoolDbContext.OfferedRides.Include(obj => obj.BookedRides).Include(obj => obj.BookedRides.User).
+            //                    Where(ride => ride.UserId == userId && ride.BookedRides.Count() != 0).ToList();
             var offeredRides = carPoolDbContext.OfferedRides.Include(obj => obj.BookedRides).ThenInclude(bookedRide => bookedRide.User).
                                 Where(ride => ride.UserId == userId && ride.BookedRides.Count() != 0).ToList();
             return offeredRides;

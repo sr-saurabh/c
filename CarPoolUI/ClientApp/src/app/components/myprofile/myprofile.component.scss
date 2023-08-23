@@ -18,7 +18,7 @@ section{
 }
 .user-div{
     padding: 1rem;
-    width: 35%;
+    max-width: 30rem;
     border: 2px solid #9319FF;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
@@ -55,7 +55,8 @@ section{
     }
     &>div{
         padding: 10px;
-        border-radius: 10px;
+        border-radius: 10px; 
+        width: 20rem;
         border: 2px solid #9319FF;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     }
@@ -88,5 +89,24 @@ section{
             width: 18rem;
         }
         
+    }
+}
+@media only screen and (max-width: 860px) {
+
+    section>div{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 550px) {
+
+    .user-div
+    {
+        margin-right: 0 !important;
+        &>div{
+            flex-direction: column;
+            div{
+                margin-right: 0 !important;
+            }
+        }
     }
 }

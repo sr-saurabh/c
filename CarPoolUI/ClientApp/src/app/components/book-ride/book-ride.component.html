@@ -15,26 +15,43 @@
         </div>
       </div>
 
-      <div class="mt-4 mb-3 input-container">
-        <label for="from" class="fw-bold label-text">From</label>
-        <input #from="ngModel" type="text" name="from" id="from" [(ngModel)]="ridefrom" required
-          pattern="^[A-Z a-z]+$" />
-        <p *ngIf="from.invalid && from.touched" class="text-warning mb-0">
-          This field is required.
-        </p>
+      <div class="row">
+        <div class="col-11 container">
+          <div class="mt-4 mb-3 input-container">
+            <label for="from" class="fw-bold label-text">From</label>
+            <input #from="ngModel" type="text" name="from" id="from" [(ngModel)]="ridefrom" required
+              pattern="^[A-Z a-z]+$" />
+            <p *ngIf="from.invalid && from.touched" class="text-warning mb-0">
+              This field is required.
+            </p>
+          </div>
+    
+          <div class="mb-3 input-container">
+            <label for="to" class="fw-bold label-text">To</label>
+            <input #to="ngModel" id="to" type="text" class="border-blue" name="to" required [(ngModel)]="rideTo"
+              pattern="^[A-Z a-z]+$" />
+          </div>
+    
+          <div class="mb-3 input-container">
+            <label for="date" class="fw-bold label-text">Date</label>
+            <input #date="ngModel" type="date" id="date" min="{{ crntDate | date : 'yyyy-MM-dd' }}"
+              class="border-blue text-secondary" name="date" [(ngModel)]="rideDate" required />
+          </div>
+
+        </div>
+
+        <div class="col-1 d-flex flex-column align-items-center icon">
+          <i class="fa-solid fa-circle start"></i>
+          <i class="fa-solid fa-circle fa-2xs"></i>
+          <i class="fa-solid fa-circle fa-2xs"></i>
+          <i class="fa-solid fa-circle fa-2xs"></i>
+          <i class="fa-solid fa-circle fa-2xs"></i>
+          <i class="fa-sharp fa-solid fa-location-dot fa-lg end"></i>
+      </div>
       </div>
 
-      <div class="mb-3 input-container">
-        <label for="to" class="fw-bold label-text">To</label>
-        <input #to="ngModel" id="to" type="text" class="border-blue" name="to" required [(ngModel)]="rideTo"
-          pattern="^[A-Z a-z]+$" />
-      </div>
+      
 
-      <div class="mb-3 input-container">
-        <label for="date" class="fw-bold label-text">Date</label>
-        <input #date="ngModel" type="date" id="date" min="{{ crntDate | date : 'yyyy-MM-dd' }}"
-          class="border-blue text-secondary" name="date" [(ngModel)]="rideDate" required />
-      </div>
       <div class="time-stamp">
         <label class="fw-bold label-text">Time</label>
         <!-- <label for="time" class="fw-bold label-text">Time</label> -->

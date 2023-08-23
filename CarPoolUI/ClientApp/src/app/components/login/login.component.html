@@ -90,7 +90,7 @@
       </button>
     </form>
     <p class="text-white mt-2">
-      Already a member?
+      {{isSignUp?'Already':'Not'}} a member?
       <span (click)="changeFormType()">{{ formReference | uppercase }}</span>
     </p>
     <span></span>
